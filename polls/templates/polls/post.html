@@ -2,15 +2,17 @@
 <html>
 <head>
 	<title>Page Title</title>
+    {% load static %}
 </head>
 <body>
     <h1>{{ mypost.title }}</h1>
-    <img src="/{{ mypost.icon }}" alt="Post icon">
+
+    <img src="/{{ mypost.icon }}">
     <h2>{{ mypost.description }}</h2>
 <ul>
 {% for candidate in candidate_list%}
     <h3>{{ candidate.name }}</h3>
-    <img src="/{{ candidate.photo }}" alt="candidate.photo">
+    <img  src="/{{ candidate.photo }}" alt="candidate.photo">
     <p>{{ candidate.description }}</p>
     <p>{{ candidate.voteCount }}</p>
 {% endfor %}
