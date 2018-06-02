@@ -1,29 +1,5 @@
 from django.db import models
-
-
-class Role (models.Model):
-    name = models.CharField(max_length=64, blank=False, null=False)
-
-    def __str__(self):
-        return "role %s" % self.name
-
-    class Meta:
-        verbose_name = 'Role'
-        verbose_name_plural = 'Roles'
-
-
-class User (models.Model):
-    roleId = models.ForeignKey(Role, on_delete=models.CASCADE, blank=True, null=True)
-    username = models.CharField(max_length=64, blank=False, null=False)
-    email = models.EmailField()
-    password = models.CharField(max_length=64, blank=False, null=False)
-
-    def __str__(self):
-        return "%s %s" % (self.id, self.username)
-
-    class Meta:
-        verbose_name = 'user'
-        verbose_name_plural = 'users'
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
