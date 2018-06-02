@@ -1,0 +1,22 @@
+<application>
+  <component name="PyTestFrameworkService">
+    <option name="SDK_TO_PYTEST">
+      <map>
+        <entry key="C:\MyFiles\MyProjects\Django\mysite\venv\Scripts\python.exe" value="false" />
+        <entry key="C:\MyFiles\Univercity\practice\TechPractice2017\Task9\backend\poll_backend\venv\Scripts\python.exe" value="false" />
+      </map>
+    </option>
+    <option name="SDK_TO_NOSETEST">
+      <map>
+        <entry key="C:\MyFiles\MyProjects\Django\mysite\venv\Scripts\python.exe" value="false" />
+        <entry key="C:\MyFiles\Univercity\practice\TechPractice2017\Task9\backend\poll_backend\venv\Scripts\python.exe" value="false" />
+      </map>
+    </option>
+    <option name="SDK_TO_TRIALTEST">
+      <map>
+        <entry key="C:\MyFiles\MyProjects\Django\mysite\venv\Scripts\python.exe" value="false" />
+        <entry key="C:\MyFiles\Univercity\practice\TechPractice2017\Task9\backend\poll_backend\venv\Scripts\python.exe" value="false" />
+      </map>
+    </option>
+  </component>
+</application>
