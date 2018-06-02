@@ -1,6 +1,6 @@
 from django.urls import path
 
-from polls.views import authorization
+from polls.views import authorization , postview
 
 app_name = 'polls'
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
 
     path('login/', authorization.login, name='login'),
     path('register/', authorization.register, name='login'),
+    path('post/', postview.post, name="post")
 ]
