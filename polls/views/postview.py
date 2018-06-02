@@ -14,8 +14,8 @@ from  polls.models import Candidate
 
 
 
-def post(request):
-    mypost = Post.objects.get(id=1)
+def post(request, pk):
+    mypost = Post.objects.get(id=pk)
     candidate_list = Candidate.objects.filter(postId=mypost.id)
     context = {'mypost':mypost,
                'candidate_list': candidate_list }

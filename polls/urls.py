@@ -15,5 +15,5 @@ urlpatterns = [
 
     path('login/', authorization.login, name='login'),
     path('register/', authorization.register, name='login'),
-    path('post/', postview.post, name="post")
+    path('post/<int:pk>/', postview.post, name="post")
 ]
