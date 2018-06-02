@@ -2,11 +2,9 @@
 <html>
 <head>
 	<title>Page Title</title>
-    {% load static %}
 </head>
 <body>
     <h1>{{ mypost.title }}</h1>
-
     <img src="/{{ mypost.icon }}">
     <h2>{{ mypost.description }}</h2>
 <ul>
@@ -17,7 +15,7 @@
     <p>{{ candidate.voteCount }}</p>
 {% endfor %}
 </ul>
- <form >
+ <form>
    <p><b>please vote!!!</b></p>
      {% for candidate in candidate_list%}
        <p><input name="radio" type="radio" id="{{ candidate.id }}" value="{{ candidate.id }}"> {{ candidate.name }}</p>
