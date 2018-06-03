@@ -7,4 +7,6 @@ VotingSystem/__pycache__/
 polls/migrations/
 static/
 .idea/
+_windows/
+codestyles/
 
