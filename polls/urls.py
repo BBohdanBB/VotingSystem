@@ -4,17 +4,10 @@ from polls.views import authorization, index, postview
 
 app_name = 'polls'
 urlpatterns = [
-    # ex: /polls/
-    #path('', views.index, name='index'),
-    # ex: /polls/5/
-    #path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /polls/5/results/
-    #path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /polls/5/vote/
-    #path('<int:question_id>/vote/', views.vote, name='vote'),
-    path('', index.IndexView.as_view(), name='index'),
+    path('', index.polls, name='index'),
     path('login/', authorization.login, name='login'),
     path('register/', authorization.register, name='register'),
-    path('post/', index.IndexView.as_view(), name="post"),
+    path('page/', index.polls, name="page"),
+    path('page/<int:page_number>/', index.polls, name="page"),
     path('post/<int:postid>/', postview.post, name="post"),
 ]

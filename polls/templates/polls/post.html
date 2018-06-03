@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Page Title</title>
-</head>
-<body>
+{% extends 'polls/layout.html' %}
+
+{% block content %}
     <h1>{{ mypost.title }}</h1>
     <img src="/{{ mypost.icon }}">
     <h2>{{ mypost.description }}</h2>
@@ -23,6 +20,5 @@
     <p><input type="submit" value="Vote"></p>
   </form>
   <p>Created by {{ mypost.userId.username}}</p>
-</body>
-</html>
+{% endblock %}
 
