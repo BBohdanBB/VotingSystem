@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib import auth
 # Create your views here.
 from django.http import HttpResponse
 from  django.shortcuts import  render
@@ -18,7 +18,8 @@ def post(request, postid):
     mypost = get_object_or_404(Post, pk=postid)
     candidate_list = Candidate.objects.filter(postId=mypost.id)
     context = {'mypost':mypost,
-               'candidate_list': candidate_list }
+               'candidate_list': candidate_list ,
+               'username': auth.get_user(request).username}
     return render(request, 'polls/post.html', context)
 
 

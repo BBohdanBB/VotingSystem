@@ -7,7 +7,7 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'polls/post_summary_style.css' %}" />
 </head>
-<body>
+<body class="mh-100" style="height: 100vh; background-color:#eef1f4">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light sticky-top p-lg-3">
         <div class="container pr-lg-0">
             <a class="navbar-brand font-weight-bold" href="{% url 'polls:index' %}">POLLS</a>
@@ -19,23 +19,26 @@
                 <form class="form-inline my-2 my-lg-0 w-100">
                     <input class="form-control mx-lg-auto w-50 bg-transparent text-light" type="search" placeholder="Search poll" aria-label="Searc">
                 </form>
-                <form class="form-inline">
-                    <button class="btn btn-outline-light" type="button">New poll</button>
-                </form>
+                <a class="nav-link btn btn-outline-primary mr-2" href="#">New Poll</a>
+                {% if username %}
+                    <a class="nav-link btn btn-outline-success" href="/polls/logout/">Sign Out ({{ username }})</a>
+                {% else %}
+                    <a class="nav-link btn btn-outline-success" href="/polls/login">Sign In</a>
+                {% endif %}
             </div>
         </div>
     </nav>
 
-    <div class="container mw-100">
+    <div class="container mw-100 mh-100" >
         <div class="row">
-            <div class="col-2" style="background-color:#eef1f4">
+            <div class="col-2">
 
             </div>
             <div class="col-8 p-lg-4">
                 {% block content %}
                 {% endblock %}
             </div>
-            <div class="col-2" style="background-color:#eef1f4">
+            <div class="col-2">
 
             </div>
         </div>
