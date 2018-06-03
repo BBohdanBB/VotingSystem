@@ -1,0 +1,118 @@
+<application>
+  <component name="ProjectJdkTable">
+    <jdk version="2">
+      <name value="Python 3.6 (mysite)" />
+      <type value="Python SDK" />
+      <version value="Python 3.6.5" />
+      <homePath value="C:\MyFiles\MyProjects\Django\mysite\venv\Scripts\python.exe" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root url="file://C:/MYProgram Files/DLLs" type="simple" />
+            <root url="file://C:/MYProgram Files/Lib" type="simple" />
+            <root url="file://C:/MYProgram Files" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/Django/mysite/venv" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/Django/mysite/venv/Lib/site-packages" type="simple" />
+            <root url="jar://C:/MyFiles/MyProjects/Django/mysite/venv/Lib/site-packages/setuptools-28.8.0-py3.6.egg!/" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/Django/mysite/venv/Lib/site-packages/pip-9.0.1-py3.6.egg" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/41345834" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.6" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.5" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.4" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="C:/MyFiles/MyProjects/Django/mysite" />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 3.6 (mysite)" />
+      <type value="Python SDK" />
+      <version value="Python 3.6.5" />
+      <homePath value="C:\MyFiles\MyProjects\Django\mysite\venv\Scripts\python.exe" />
+      <roots>
+        <classPath>
+          <root type="composite" />
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="C:/MyFiles/MyProjects/Django/mysite" />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 3.6 virtualenv at C:\MyFiles\MyProjects\practice\VotingSystem\venv" />
+      <type value="Python SDK" />
+      <version value="Python 3.6.5" />
+      <homePath value="C:\MyFiles\MyProjects\practice\VotingSystem\venv\Scripts\python.exe" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root url="file://C:/MYProgram Files/DLLs" type="simple" />
+            <root url="file://C:/MYProgram Files/Lib" type="simple" />
+            <root url="file://C:/MYProgram Files" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/practice/VotingSystem/venv" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/practice/VotingSystem/venv/Lib/site-packages" type="simple" />
+            <root url="jar://C:/MyFiles/MyProjects/practice/VotingSystem/venv/Lib/site-packages/setuptools-28.8.0-py3.6.egg!/" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/practice/VotingSystem/venv/Lib/site-packages/pip-9.0.1-py3.6.egg" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/582567373" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.6" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.5" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.4" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="C:/MyFiles/MyProjects/practice/VotingSystem" />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 3.6 (VotingSystem)" />
+      <type value="Python SDK" />
+      <version value="Python 3.6.5" />
+      <homePath value="C:\MyFiles\MyProjects\VotingSystem\venv\Scripts\python.exe" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root url="file://C:/MYProgram Files/DLLs" type="simple" />
+            <root url="file://C:/MYProgram Files/Lib" type="simple" />
+            <root url="file://C:/MYProgram Files" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/VotingSystem/venv" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/VotingSystem/venv/Lib/site-packages" type="simple" />
+            <root url="jar://C:/MyFiles/MyProjects/VotingSystem/venv/Lib/site-packages/setuptools-28.8.0-py3.6.egg!/" type="simple" />
+            <root url="file://C:/MyFiles/MyProjects/VotingSystem/venv/Lib/site-packages/pip-9.0.1-py3.6.egg" type="simple" />
+            <root url="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1341603981" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.6" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.5" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.4" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3" type="simple" />
+            <root url="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/2and3" type="simple" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional ASSOCIATED_PROJECT_PATH="C:/MyFiles/MyProjects/VotingSystem" />
+    </jdk>
+  </component>
+</application>
