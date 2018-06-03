@@ -1,0 +1,24 @@
+{% extends 'polls/layout.html' %}
+
+{% block content %}
+    <h1>{{ mypost.title }}</h1>
+    <img src="/{{ mypost.icon }}">
+    <h2>{{ mypost.description }}</h2>
+<ul>
+{% for candidate in candidate_list%}
+    <h3>{{ candidate.name }}</h3>
+    <img  src="/{{ candidate.photo }}" alt="candidate.photo">
+    <p>{{ candidate.description }}</p>
+    <p>{{ candidate.voteCount }}</p>
+{% endfor %}
+</ul>
+ <form>
+   <p><b>please vote!!!</b></p>
+     {% for candidate in candidate_list%}
+       <p><input name="radio" type="radio" id="{{ candidate.id }}" value="{{ candidate.id }}"> {{ candidate.name }}</p>
+     {% endfor %}
+    <p><input type="submit" value="Vote"></p>
+  </form>
+  <p>Created by {{ mypost.userId.username}}</p>
+{% endblock %}
+
