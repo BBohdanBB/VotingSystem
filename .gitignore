@@ -1,10 +1,12 @@
 db.sqlite3
-
 polls/__pycache__/
 polls/views/__pycache__/
 venv/
 VotingSystem/__pycache__/
 polls/migrations/
-static/
-.idea/
 
+.idea/
+_windows/
+codestyles/
+_windows/
+codestyles/

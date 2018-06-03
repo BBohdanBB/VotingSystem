@@ -1,0 +1,10 @@
+.leftspace{
+    padding-left: 70px !important;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    border-radius: 50%;
+}
