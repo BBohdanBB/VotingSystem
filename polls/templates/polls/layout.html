@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="min-height: 100%">
 <head>
     <meta charset="UTF-8">
     <title>Polls</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'polls/post_summary_style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/socials-style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="mh-100" style="height: 100vh; background-color:#eef1f4">
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light sticky-top p-lg-3">
         <div class="container pr-lg-0">
             <a class="navbar-brand font-weight-bold" href="{% url 'polls:index' %}">POLLS</a>
@@ -27,12 +29,17 @@
                 {% endif %}
             </div>
         </div>
+
     </nav>
 
-    <div class="container mw-100 mh-100" >
+    <div class="container mw-100" >
         <div class="row">
-            <div class="col-2">
-
+            <div class="col-2 " >
+                <div class="my-3 py-3" style="position: fixed;">
+                    <a class="nav-link btn btn-outline-primary my-3" href="/polls/popular/">most popular</a>
+                    <a class="nav-link btn btn-outline-primary my-3" href="/polls/unpopular/">most unpopular</a>
+                    <a class="nav-link btn btn-outline-primary" href="/polls/random/">random poll</a>
+                </div>
             </div>
             <div class="col-8 p-lg-4">
                 {% block content %}
