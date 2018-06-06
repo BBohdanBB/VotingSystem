@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/addPost/css/main.css' %}">
+    <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="{% static 'polls/addPost/lib/css/bootstrap.min.css' %}"/>
+    <script src="{% static 'polls/addPost/lib/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'polls/addPost/lib/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">Main</a>
+                <a class="navbar-brand">Login</a>
+                <a class="navbar-brand">Registration</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <form action="{% url 'polls:addPost' %}" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="postTitle">Input Post Title</label>
+                    <input class="form-control" type="text" name="posttitle"  >
+                </div>
+                <div class="form-group">
+                    <label for="postDesc">Input Post Description</label>
+                    <textarea class="form-control" rows="5" cols="40" name="postDesc"></textarea>
+                </div>
+                <div>
+                    <label for="postIcon">Choose post Icon:</label>
+                    <input class="form-control-file" type="file" name="postIcon">
+                </div>
+
+                <div class="candidateContainer">
+                    <div class="addCandidateFields">
+                        <div class="form-group">
+                            <label for="candidateName">Input candidate name</label>
+                            <input class="form-control" type="text" id="candidateName" name="candidateName">
+                        </div>
+                        <div class="form-group">
+                            <label for="candidateDesc">Input candidate info</label>
+                            <textarea class="form-control" rows="7" cols="40" name="candidateDesc"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="candidatePhoto">Choose candidate Photo:</label>
+                            <input class="form-control-file" type="file" name="candidatePhoto">
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" id="addCandidate" type="button" value="Add Candidate...">
+                <br><br>
+                <input class="btn btn-primary" type="submit" value="Create Post" />
+            </form>
+    </div>
+    {% load static %}
+    <!-- <script src="~/lib/jquery/dist/jquery.js"></script>-->
+    <script src="{% static 'polls/addPost/js/common.js' %}"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@ from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.template.context_processors import csrf
 
+
 def login(request):
     args = {}
     args.update(csrf(request))
@@ -23,9 +24,11 @@ def login(request):
     else:
         return render_to_response('polls/login.html', args)
 
+
 def logout(request):
     auth.logout(request)
     return redirect("/")
+
 
 def register(request):
     if request.method == 'POST':
@@ -37,6 +40,5 @@ def register(request):
             return redirect('/polls')
     else:
         form = RegistrationForm()
-        args = {'form':form}
+        args = {'form': form}
         return render(request, 'polls/reg_form.html', args)
-
