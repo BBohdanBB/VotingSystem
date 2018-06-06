@@ -7,13 +7,6 @@ from polls.models import Post, Candidate
 
 
 def addPost(request):
-    if request.method == "GET":
-        post = Post
-        candidate = Candidate
-        context = {
-            'post': post,
-            'candidate': candidate
-        }
-        return render(request, 'polls/addPost.html', context)
+    return HttpResponse("s")
 
 
