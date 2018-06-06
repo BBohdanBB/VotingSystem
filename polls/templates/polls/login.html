@@ -9,7 +9,7 @@
             <a href="#" class="fa fa-instagram"></a>
         </div>
     </div>
-    <form action="/polls/login/" method="post" class=" mx-a">
+    <form action="/polls/login/?next={{ request.path }}" method="post" class=" mx-a">
         {% csrf_token %}
         <div class="form-group">
             <label for="username" class="font-weight-bold">Name</label>

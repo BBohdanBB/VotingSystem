@@ -16,11 +16,11 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            redirect_to = request.REQUEST.get('next', '')
+            return HttpResponseRedirect(redirect_to)
         else:
             args['login_error'] = "User not found"
             return render_to_response('polls/login.html', args)
-
     else:
         return render_to_response('polls/login.html', args)
 
