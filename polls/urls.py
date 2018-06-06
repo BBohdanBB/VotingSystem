@@ -16,4 +16,5 @@ urlpatterns = [
     path('random/', index.random_poll, name="random"),
     path('page/<int:page_number>/', index.polls, name="page"),
     path('post/<int:postid>/', postview.post, name="post"),
+    path('vote/<int:postid>/', postview.vote, name='vote'),
 ]

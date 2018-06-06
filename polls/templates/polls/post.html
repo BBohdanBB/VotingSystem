@@ -12,10 +12,12 @@
     <p>{{ candidate.voteCount }}</p>
 {% endfor %}
 </ul>
- <form>
+ <form action="{% url 'polls:vote' mypost.id %}" method="post">
+     {% csrf_token %}
    <p><b>please vote!!!</b></p>
      {% for candidate in candidate_list%}
-       <p><input name="radio" type="radio" id="{{ candidate.id }}" value="{{ candidate.id }}"> {{ candidate.name }}</p>
+         <label for="choice{{ candidate.id }}">{{ candidate.name }}</label><br />
+         <input type="radio" name="choice" id="choice{{ candidate.id }}" value="{{ candidate.id }}" />
      {% endfor %}
     <p><input type="submit" value="Vote"></p>
   </form>

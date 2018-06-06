@@ -1,10 +1,91 @@
 {% extends 'polls/layout.html' %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+
+    <form method="post">
+        {% csrf_token %}
+        <p><label for="id_email">Email:</label> <input type="email" name="email" required id="id_email" /></p>
+        <p><label for="id_password1">Password:</label> <input type="password" name="password1" required id="id_password1" />
+            <span class="helptext"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></span></p>
+        <p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" required id="id_password2" /> <span class="helptext">Enter the same password as before, for verification.</span></p>
+        <button type="submit">Register</button>
+    </form>
+
+    <form class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="id_first_name">First name</label>
+                <input type="text" class="form-control" id="id_first_name" maxlength="30" name="first_name" placeholder="First name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="id_last_name">Last name</label>
+                <input type="text" class="form-control" id="id_last_name" maxlength="150" placeholder="Last name" name="last_name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="id_username">Username:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    </div>
+                    <input name="username" maxlength="150" autofocus id="id_username" class="form-control"  placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please choose a username. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom05">Zip</label>
+                <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+
 
 {% endblock %}

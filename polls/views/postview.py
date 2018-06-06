@@ -22,4 +22,11 @@ def post(request, postid):
                'username': auth.get_user(request).username}
     return render(request, 'polls/post.html', context)
 
+def vote(request, postid):
+    post = get_object_or_404(Post, pk=postid)
+    selected_candidate = post.candidate_set.get(pk=request.POST['choice'])
+
+    return HttpResponse(selected_candidate)
+
+
 
