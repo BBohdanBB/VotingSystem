@@ -1,0 +1,43 @@
+{% extends 'polls/layout.html' %}
+
+{% block content %}
+    <div class="container body-content">
+        <form method="post" action='/polls/addpost/'>
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="postTitle">Input Post Title</label>
+                    <input class="form-control" type="text" name="title"  >
+                </div>
+                <div class="form-group">
+                    <label for="postDesc">Input Post Description</label>
+                    <textarea class="form-control" rows="5" cols="40" name="description"></textarea>
+                </div>
+                <div>
+                    <label for="icon">Choose post Icon:</label>
+                    <input class="form-control-file" type="file" name="icon">
+                </div>
+
+                <div class="candidateContainer">
+                    <div class="addCandidateFields">
+                        <div class="form-group">
+                            <label for="candidateName">Input candidate name</label>
+                            <input class="form-control" type="text" id="candidateName" name="candidateName">
+                        </div>
+                        <div class="form-group">
+                            <label for="candidateDesc">Input candidate info</label>
+                            <textarea class="form-control" rows="7" cols="40" name="candidateDesc"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="candidatePhoto">Choose candidate Photo:</label>
+                            <input class="form-control-file" type="file" name="candidatePhoto">
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" id="addCandidate" type="button" value="Add Candidate...">
+                <br><br>
+                <input class="btn btn-primary" type="submit" value="Create Post" />
+            </form>
+    </div>
+    <!-- <script src="~/lib/jquery/dist/jquery.js"></script>-->
+
+{% endblock %}
