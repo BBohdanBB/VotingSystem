@@ -27,13 +27,14 @@ def vote(request, postid):
     selected_candidate = post.candidate_set.get(pk=request.POST['choice'])
     user_post = User_Candidate.objects.filter(userId=request.user.id).filter(postId=post.id)
     if user_post.count() > 0:
-        return render(request,'polls/message.html', {'message': 'You have already voted'} )
+        return render(request, 'polls/message.html', {'message': 'You have already voted', 'post': post.id, })
     user_cand = User_Candidate.objects.create()
     user_cand.postId = post
     user_cand.candidateId = selected_candidate
     user_cand.userId = request.user
     user_cand.save()
-    return render(request,'polls/message.html', {'message': 'Thank you! You vote for  ' + user_cand.candidateId.name})
+    return render(request, 'polls/message.html',
+                    {'message': 'Thank you! You vote for  ' + user_cand.candidateId.name, 'post': post.id, })
 
 
 

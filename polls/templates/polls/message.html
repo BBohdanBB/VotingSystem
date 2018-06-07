@@ -1,7 +1,9 @@
 {% extends 'polls/layout.html' %}
 
 {% block content %}
-    <p>{{ message }}</p>
-     <button > Back to the vote</button></p>
-     <a href="" >Комментировать</a>
+
+    <p>{{ message }}</p><br>
+    <div class="my-2">
+        <a class="btn btn-primary" href="{% url 'polls:post' post %}">Back to Post preview</a>
+    </div>
 {% endblock %}
