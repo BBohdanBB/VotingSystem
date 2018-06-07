@@ -38,15 +38,20 @@ def logout(request):
 
 
 def register(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            newuser = auth.authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password2'])
+    args = {}
+    args.update(csrf(request))
+    args['form'] = RegistrationForm()
+    if request.POST:
+        newuser_form = RegistrationForm(request.POST)
+        if newuser_form.is_valid():
+            newuser_form.save()
+            newuser = auth.authenticate(username=newuser_form.cleaned_data['username'], password=newuser_form.cleaned_data['password2'])
             auth.login(request, newuser)
-            return redirect('/polls')
-        return redirect('/polls')
-    else:
-        form = RegistrationForm()
-        args = {'form': form}
-        return render(request, 'polls/reg_form.html', args)
+            return redirect('/')
+        else:
+            args['form'] = newuser_form
+    return render_to_response('polls/reg_form.html', args)
+
+
+
+

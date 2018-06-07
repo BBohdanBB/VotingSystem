@@ -1,78 +1,73 @@
 {% extends 'polls/layout.html' %}
 
 {% block content %}
-
-    <!--<form method="post">
-        {% csrf_token %}
-        <p><label for="id_email">Email:</label> <input type="email" name="email" required id="id_email" /></p>
-        <p><label for="id_password1">Password:</label> <input type="password" name="password1" required id="id_password1" />
-            <span class="helptext"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></span></p>
-        <p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" required id="id_password2" /> <span class="helptext">Enter the same password as before, for verification.</span></p>
-        <button type="submit">Register</button>
-    </form>-->
-
+    <div class="col-10 mx-auto bg-white p-5 border border-info rounded">
     <form class="needs-validation" novalidate method="post">
         {% csrf_token %}
         <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="id_first_name">First name</label>
-                <input type="text" class="form-control" id="id_first_name" maxlength="30" name="first_name" placeholder="First name" required>
+            <div class="col-md-6 mb-3">
+                <label for="id_username">Username:</label>
+                <input type="text" class="form-control" name="username" maxlength="150" autofocus required id="id_username"  placeholder="Username"/>
+                <div class="invalid-feedback helptext">
+                    Please choose a username. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+                </div>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="id_last_name">Last name</label>
-                <input type="text" class="form-control" id="id_last_name" maxlength="150" placeholder="Last name" name="last_name" required>
+            <div class="col-md-6 mb-3">
+                <label for="id_email">Email:</label>
+                <input type="email" class="form-control" name="email" required id="id_email" placeholder="Email"/>
+                <div class="invalid-feedback">
+                    Please provide correct email
+                </div>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-
-
         </div>
 
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="id_username">Username:</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        </div>
-                        <input name="username" maxlength="150" autofocus id="id_username" class="form-control"  placeholder="Username" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Please choose a username. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="id_email">Email</label>
-                    <input type="text" class="form-control" id="id_email" maxlength="30" name="id_email" placeholder="Email" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-            </div>
         <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="id_password1">Password</label>
-                    <input type="password" class="form-control" id="id_password1" maxlength="150" placeholder="Password" name="password1" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
+            <div class="col-md-6 mb-3">
+                <label for="id_password1">Password:</label>
+                <input class="form-control" type="password" name="password1" required id="id_password1" placeholder="Password"/>
+                <div class="invalid-feedback helptext">
+                    <ul>
+                        <li>Your password can&#39;t be too similar to your other personal information.</li>
+                        <li>Your password must contain at least 8 characters.</li>
+                        <li>Your password can&#39;t be a commonly used password.</li>
+                        <li>Your password can&#39;t be entirely numeric.</li>
+                    </ul>
                 </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="id_password2">Password confirmation</label>
-                <input type="password" class="form-control" id="id_password2" maxlength="150" placeholder="Password confirmation" name="password2" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="id_password2">Password confirmation:</label>
+                <input class="form-control" type="password" name="password2" required id="id_password2" placeholder="Confirm password" />
+                <div class="invalid-feedback helptext">
+                    <span class="helptext">Enter the same password as before, for verification.</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="id_first_name">First name:</label>
+                <input class="form-control" type="text" name="first_name" maxlength="30" id="id_first_name"  placeholder="First name" />
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="id_last_name">Last name:</label>
+                <input class="form-control" type="text" name="last_name" maxlength="150" id="id_last_name" placeholder="Last name"/>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="submit">Submit form</button>
+
+        <button class="btn btn-primary" type="submit">Register</button>
     </form>
+    </div>
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields

@@ -1,7 +1,6 @@
 {% extends 'polls/layout.html' %}
 
 {% block content %}
-    <p>{{ request.GET.urlencode }} pou</p>
     <div class="col-7 mx-auto bg-white p-5 border border-info rounded">
     <div>
         <div class="text-right">
@@ -10,11 +9,7 @@
             <a href="#" class="fa fa-instagram"></a>
         </div>
     </div>
-        {% if next %}
-            <form action="/polls/login/?next={{next}}" method="post" class=" mx-a">
-        {%else%}
-            <form action="/polls/login/" method="post" class=" mx-a">
-        {% endif %}
+        <form action="/accounts/login/" method="post" class=" mx-a">
 
         {% csrf_token %}
         <div class="form-group">
