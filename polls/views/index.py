@@ -1,16 +1,13 @@
 from __future__ import print_function
-from django.http import HttpResponse, HttpResponseRedirect
-from django.views import generic
-from django.utils import timezone
 from django.shortcuts import render_to_response, render
 from polls.models import Post, User_Candidate, Candidate
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib import auth
 from django.db.models import Count
-from polls.views import postview
 from django.shortcuts import render, get_object_or_404
 import random
 from django.template.context_processors import csrf
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -50,7 +47,7 @@ def random_poll(request):
                'username': auth.get_user(request).username}
     return render(request, 'polls/post.html', context)
 
-
+@login_required
 def add(request):
     args = {}
     args.update(csrf(request))

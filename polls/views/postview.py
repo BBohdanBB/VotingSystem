@@ -16,7 +16,6 @@ def post(request, postid):
     candidate_votes = {a: 0 for a in Candidate.objects.filter(postId=postid)}
     for c_u in User_Candidate.objects.filter(postId=postid):
         candidate_votes[c_u.candidateId]+=1
-
     context = {'mypost': mypost,
                'username': auth.get_user(request).username,
                'candidate_votes': candidate_votes, }
