@@ -45,6 +45,7 @@ def register(request):
             newuser = auth.authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password2'])
             auth.login(request, newuser)
             return redirect('/polls')
+        return redirect('/polls')
     else:
         form = RegistrationForm()
         args = {'form': form}

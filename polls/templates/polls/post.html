@@ -5,19 +5,22 @@
     <img src="/{{ mypost.icon }}">
     <h2>{{ mypost.description }}</h2>
 <ul>
-{% for candidate in candidate_list%}
-    <h3>{{ candidate.name }}</h3>
-    <img  src="/{{ candidate.photo }}" alt="candidate.photo">
-    <p>{{ candidate.description }}</p>
-    <p>{{ candidate.voteCount }}</p>
+{% for key, values in candidate_votes.items%}
+    <h3>{{ key.name }}</h3>
+    <img  src="/{{ key.photo }}" alt="candidate.photo">
+    <p>{{ key.description }}</p>
+    <p>
+        {{ values}} votes
+    </p>
 {% endfor %}
 </ul>
 <form action="{% url 'polls:vote' mypost.id %}" method="post">
      {% csrf_token %}
    <p><b>please vote!!!</b></p>
-     {% for candidate in candidate_list%}
-         <label for="choice{{ candidate.id }}">{{ candidate.name }}</label><br />
+     {% for candidate in candidate_votes.keys%}
+
          <input type="radio" name="choice" id="choice{{ candidate.id }}" value="{{ candidate.id }}" />
+         <label for="choice{{ candidate.id }}">{{ candidate.name }}</label><br />
      {% endfor %}
     <p><input type="submit" value="Vote"></p>
   </form>

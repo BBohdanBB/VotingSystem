@@ -29,6 +29,9 @@ class Candidate(models.Model):
     def __str__(self):
         return "Candidate %s %s" % (self.id, self.name)
 
+    def get_id(self):
+        return self.id
+
     class Meta:
         verbose_name = 'Candidate'
         verbose_name_plural = 'Candidates'
