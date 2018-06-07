@@ -2,19 +2,19 @@
 
 {% block content %}
     <div class="container body-content">
-        <form method="post">
+        <form method="post" action='/polls/addpost/'>
             {% csrf_token %}
                 <div class="form-group">
                     <label for="postTitle">Input Post Title</label>
-                    <input class="form-control" type="text" name="posttitle"  >
+                    <input class="form-control" type="text" name="title"  >
                 </div>
                 <div class="form-group">
                     <label for="postDesc">Input Post Description</label>
-                    <textarea class="form-control" rows="5" cols="40" name="postDesc"></textarea>
+                    <textarea class="form-control" rows="5" cols="40" name="description"></textarea>
                 </div>
                 <div>
-                    <label for="postIcon">Choose post Icon:</label>
-                    <input class="form-control-file" type="file" name="postIcon">
+                    <label for="icon">Choose post Icon:</label>
+                    <input class="form-control-file" type="file" name="icon">
                 </div>
 
                 <div class="candidateContainer">
@@ -40,5 +40,5 @@
     </div>
     {% load static %}
     <!-- <script src="~/lib/jquery/dist/jquery.js"></script>-->
-    <script src="{% static 'polls/addPost/js/common.js' %}"></script>
+
 {% endblock %}

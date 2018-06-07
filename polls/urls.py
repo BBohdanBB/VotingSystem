@@ -17,4 +17,5 @@ urlpatterns = [
     path('post/<int:postid>/', postview.post, name="post"),
     path('vote/<int:postid>/', postview.vote, name='vote'),
     path('add/', index.add, name='vote'),
+    path('addpost/', post.addPost, name="addp"),
 ]

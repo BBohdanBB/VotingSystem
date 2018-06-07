@@ -27,20 +27,21 @@ class RegistrationForm(UserCreationForm):
 class AddPostForm(forms.Form):
     class Meta:
         model = Post
-        fields = ('title', 'description', 'icon', 'candName', 'candPhoto', 'candDescription', )
+        fields = ('title', 'description', )
         widgets = {
             'createDate': forms.HiddenInput(),
             'user': forms.HiddenInput(),
             'modifiedDate': forms.HiddenInput(),
-            'postId': forms.HiddenInput(),
         }
 
-    def save(self, commit = True):
-        post = super(AddPostForm, self).save(commit=False)
+    def save(self, commit=True):
+        post = Post.objects.create()
         post.createDate = timezone.now()
         post.modifiedDate = timezone.now()
-        post.icon = self.cleaned_data['icon']
         post.title = self.cleaned_data['title']
         post.checked = False
         post.description = self.cleaned_data['description']
+        if commit:
+            post.save()
+        return post
 
