@@ -1,0 +1,29 @@
+.post-image {
+    width: 90%;
+    margin: 0 5%;
+    border-radius: 5px;
+}
+
+.post-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.post-description-container, .post-image-container {
+    padding: 15px 5%;
+}
+
+.post-description-container {
+    font-size: 1em;
+}
+
+.modal-dialog {
+    width: 80%;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 800px;
+    }
+}

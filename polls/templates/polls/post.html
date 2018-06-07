@@ -1,28 +1,70 @@
 {% extends 'polls/layout.html' %}
 
 {% block content %}
-    <h1>{{ mypost.title }}</h1>
-    <img src="/{{ mypost.icon }}">
-    <h2>{{ mypost.description }}</h2>
+    <div class="post-title">
+        <h1>{{ mypost.title }}</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6 post-image-container">
+            <img data-toggle="modal" data-target="#postModal" class="post-image" src="/{{ mypost.icon }}">
+             <div id="postModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                  <img src="/{{ mypost.icon }}" alt="post.photo" class="img-responsive post-image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 post-description-container">
+             <p>{{ mypost.description }}</p>
+        </div>
+    </div>
+    <div class="post-title">
+        <h3>Candidates:</h3>
+    </div>
 <ul>
 {% for key, values in candidate_votes.items%}
     <h3>{{ key.name }}</h3>
-    <img  src="/{{ key.photo }}" alt="candidate.photo">
-    <p>{{ key.description }}</p>
-    <p>
-        {{ values}} votes
-    </p>
+    <div class="row">
+        <div class="col-md-6">
+          <img data-toggle="modal" data-target="#myModal{{ key.id }}" class="post-image" src="/{{ key.photo }}" alt="candidate.photo">
+            <div id="myModal{{ key.id }}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                  <img src="/{{ key.photo }}" alt="candidate.photo" class="img-responsive post-image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <p>{{ key.description }}</p>
+            <p>
+                {{ values}} votes
+            </p>
+        </div>
+    </div>
 {% endfor %}
 </ul>
 <form action="{% url 'polls:vote' mypost.id %}" method="post">
      {% csrf_token %}
-   <p><b>please vote!!!</b></p>
+   <p><b>Please vote!!!</b></p>
      {% for candidate in candidate_votes.keys%}
-
-         <input type="radio" name="choice" id="choice{{ candidate.id }}" value="{{ candidate.id }}" />
-         <label for="choice{{ candidate.id }}">{{ candidate.name }}</label><br />
+         <div class="form-group">
+             <input type="radio" name="choice" id="choice{{ candidate.id }}" value="{{ candidate.id }}" />
+             <label for="choice{{ candidate.id }}">{{ candidate.name }}</label><br />
+         </div>
      {% endfor %}
-    <p><input type="submit" value="Vote"></p>
+    <p><input class="btn btn-primary" type="submit" value="Vote"></p>
   </form>
   <p>Created by {{ mypost.userId.username}}</p>
 {% endblock %}
