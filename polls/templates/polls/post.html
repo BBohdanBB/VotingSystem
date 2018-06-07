@@ -12,7 +12,7 @@
     <p>{{ candidate.voteCount }}</p>
 {% endfor %}
 </ul>
- <form action="{% url 'polls:vote' mypost.id %}" method="post">
+<form action="{% url 'polls:vote' mypost.id %}" method="post">
      {% csrf_token %}
    <p><b>please vote!!!</b></p>
      {% for candidate in candidate_list%}
