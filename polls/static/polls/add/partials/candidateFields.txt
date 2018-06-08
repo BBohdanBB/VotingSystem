@@ -1,14 +1,2 @@
-<div class="addCandidateFields">
-    <div class="form-group">
-        <label for="candidateName">Input candidate name</label>
-        <input class="form-control" type="text" id="candidateName" name="candidateName">
-    </div>
-    <div class="form-group">
-        <label for="postDesc">Input candidate info</label>
-        <textarea class="form-control" rows="7" cols="40" name="candidateDesc"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="candidatePhoto">Choose candidate Photo:</label>
-        <input class="form-control-file" type="file" name="candidatePhoto">
-    </div>
-</div>
+sfsdfsd
+fsdfs

@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Post, Candidate
 from django.utils import timezone
+from django.forms import ModelForm
+from django.forms.models import inlineformset_factory
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, Button
 
 
 class RegistrationForm(UserCreationForm):
@@ -23,25 +28,37 @@ class RegistrationForm(UserCreationForm):
 
         return user
 
+class PostForm(ModelForm):
 
-class AddPostForm(forms.Form):
     class Meta:
         model = Post
-        fields = ('title', 'description', )
-        widgets = {
-            'createDate': forms.HiddenInput(),
-            'user': forms.HiddenInput(),
-            'modifiedDate': forms.HiddenInput(),
-        }
+        fields = ('title','description', 'icon')
 
-    def save(self, commit=True):
-        post = Post.objects.create()
-        post.createDate = timezone.now()
-        post.modifiedDate = timezone.now()
-        post.title = self.cleaned_data['title']
-        post.checked = False
-        post.description = self.cleaned_data['description']
-        if commit:
-            post.save()
-        return post
+    @property
+    def helper(self):
+        helper = FormHelper()
+        helper.form_tag = False # This is crucial.
+        helper.layout = Layout(
+            Fieldset('Create new post', 'title', 'description','icon'),
+        )
 
+        return helper
+
+
+class CandidateFormHelper(FormHelper):
+    def __init__(self, *args, **kwargs):
+        super(CandidateFormHelper, self).__init__(*args, **kwargs)
+        self.form_tag = False
+        self.layout = Layout(
+            Fieldset("Add new candidate", 'name','description', 'photo',),
+        )
+        #self.helper = CandidateFormHelper()
+        #self.helper[:].wrap(self.layout.fields, wrapper_class="housenumber")
+
+CandidateFormset = inlineformset_factory(
+    Post,
+    Candidate,
+    fields=('name','description', 'photo',),
+    extra=2,
+    can_delete=True,
+)

@@ -1,0 +1,21 @@
+{% extends 'polls/layout.html' %}
+
+{% block content %}
+
+    {% load crispy_forms_tags %}
+
+    <div class='container'>
+        <form method='post' enctype="multipart/form-data" class="candidateContainer">
+            {% crispy form %}
+            {{ candidate_form.management_form }}
+            {{ candidate_form.non_form_errors }}
+
+            {% crispy candidate_form candidate_formhelper %}
+
+            <input type="button" value="Add More" id="add_more" onclick="cloneMore()">
+
+            <input class='btn btn-primary' type='submit' value='Save'>
+        </form>
+    </div>
+
+{% endblock %}

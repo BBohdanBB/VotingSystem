@@ -1,5 +1,5 @@
 from django.urls import path
-from polls.views import authorization, index, postview, post
+from polls.views import authorization, index, postview, post, add
 
 app_name = 'polls'
 urlpatterns = [
@@ -15,6 +15,6 @@ urlpatterns = [
     path('page/<int:page_number>/', index.polls, name="page"),
     path('post/<int:postid>/', postview.post, name="post"),
     path('vote/<int:postid>/', postview.vote, name='vote'),
-    path('add/', index.add, name='vote'),
-    path('addpost/', post.addPost, name='addpost'),
+    #path('add/', index.add, name='vote'),
+    path('add/', add.PostCreateView.as_view(), name='addpost'),
 ]
